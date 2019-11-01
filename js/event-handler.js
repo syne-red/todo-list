@@ -16,7 +16,6 @@ var EventHandler = (function () {
     function onUserLoggedIn(user) {
         DocumentEdit.updateTodoList(user.todos);
     }
-
     return {
         init
     }

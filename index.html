@@ -8,6 +8,7 @@
     <title>Team Red - Todo List</title>
     <script src="https://kit.fontawesome.com/37d12c24c4.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
     <link rel="stylesheet" href="css/style.css" />
     </head>
 
@@ -28,7 +29,13 @@
                     <a href="#about">ABOUT</a>
                 </li>
                 <li class="navbar-list-item">
-                    <a href="#login">LOG IN</a>
+                    <a href="#modal-popup-login" rel="modal:open" id="modal-link">LOG IN</a>
+                    <div id="modal-popup-login" class="modal">
+                        <input type="text" name="username" id="input-username">
+                        <input type="password" name="password" id="input-password">
+                        <button id="modal-login-button">Log in</button>
+                        <a href="#" rel="modal:close">Close</a>
+                    </div>
                 </li>
             </ul>
         </div>
@@ -117,6 +124,7 @@
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/classes.js"></script>
     <script src="js/event-handler.js"></script>
