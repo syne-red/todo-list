@@ -35,26 +35,9 @@ var LocalStorageManager = (function () {
             initializeDefaultLocalStorage();
         }
 
-        // (TEMPORARY LOGIN TEST CODE ONLY)
-        const testEmail = 'test@banana.com';
-        if (UserManager.getUserByEmail(testEmail) === null) { // add the user along with a todo if there is no user by that name
-            let user = UserManager.createUser(testEmail, '1234');
-
-            console.log('added new user');
-
-            // forcefully login banana user
-            logIn(user);
-
-            if (false) { // (testing only) allows disabling the code below
-                // just a test todo
-                let todo = new Todo('hello world');
-
-                // add the todo to user
-                user.addTodo(todo);
-            }
+        if (storage.currentLoggedInUserEmail !== null) {
+            EventHandler.onUserLoggedIn(UserManager.getCurrentUser());
         }
-
-        console.log(storage);
     }
 
     function save() {
@@ -69,11 +52,15 @@ var LocalStorageManager = (function () {
     function logOut() {
         storage.currentLoggedInUserEmail = null;
         save();
+
+        EventHandler.onUserLoggedOut();
     }
 
     function logIn(user) {
         storage.currentLoggedInUserEmail = user.email;
         save();
+
+        EventHandler.onUserLoggedIn(user);
     }
 
     return {

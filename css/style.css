@@ -135,7 +135,7 @@ a {
     text-align: center;
     margin: 15vh 0 10vh 0;
     color: white;
-    text-shadow: 2px 1px 10px rgba(0,0,0,0.6);
+    text-shadow: 2px 1px 5px rgba(0,0,0,0.6);
   }
 
   #input-section {

@@ -12,6 +12,10 @@ var EventHandler = (function () {
                 $(TodoListInputTextBox).val('');        
             }
         })
+
+        $('#btnLogOut').click(function () {
+            LocalStorageManager.logOut();
+        })
     }
 
     function onAddTodoClicked() { // when enter is pressed or the + button, this event is ran
@@ -42,7 +46,19 @@ var EventHandler = (function () {
 
     // event is called when a user logs in, so we need to update the todo list and stuff
     function onUserLoggedIn(user) {
+        $('#todo-front-login').hide();
+        $('#todo-main').show();
+        $('#btnLogIn').hide();
+        $('#btnLogOut').show();
         DocumentEdit.updateTodoList(user.todos);
+    }
+
+    // event is called when user clicks on log out
+    function onUserLoggedOut() {
+        $('#todo-main').hide();
+        $('#todo-front-login').show();
+        $('#btnLogIn').show();
+        $('#btnLogOut').hide();
     }
 
     // event called whenever a todo is changed in any way
@@ -115,7 +131,6 @@ var EventHandler = (function () {
                 return;
             } 
 
-            // flip the completed state
             todo.title = newTitle;
             LocalStorageManager.save();
         })
@@ -124,6 +139,7 @@ var EventHandler = (function () {
     return {
         init,
         onUserLoggedIn,
+        onUserLoggedOut,
         onTodoChanged,
         bindTodoEvents
     }

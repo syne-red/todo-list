@@ -6,12 +6,9 @@ var DocumentEdit = (function () {
     function init() {
         let user = UserManager.getCurrentUser();
 
-        if (user === null) {
-            alert('no logged in user');
-            return;
+        if (user !== null) {
+            updateTodoList(user.todos);
         }
-
-        updateTodoList(user.todos);
     }
 
     function addTodo(todo) {
