@@ -233,3 +233,12 @@ a {
     #list-box-ul li .checked {
       background: blue;
     }
+
+    /* Overline text */
+
+    .text-overline {
+      text-decoration: line-through;
+      outline: none;
+    }
+
+
