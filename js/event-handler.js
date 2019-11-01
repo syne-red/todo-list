@@ -52,7 +52,6 @@ var EventHandler = (function () {
         $('#btnLogOut').show();
         DocumentEdit.updateTodoList(user.todos);
     }
-<<<<<<< HEAD
 
     // event is called when user clicks on log out
     function onUserLoggedOut() {
@@ -137,8 +136,6 @@ var EventHandler = (function () {
         })
     }
 
-=======
->>>>>>> bcbcc419ffaad084c6e70a381f276ae69905bdd1
     return {
         init,
         onUserLoggedIn,
