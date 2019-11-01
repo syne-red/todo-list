@@ -44,10 +44,17 @@ var DocumentEdit = (function () {
         $('li[data-id=' + id + ']').remove();
     }
 
+    function fadeModal(){
+        $("#btnLogIn").modal({
+            fadeDuration: 100,
+            fadeDelay: 0.50
+        });
+    }
     return {
         init,
         addTodo,
         updateTodoList,
-        removeTodo
+        removeTodo,
+        fadeModal
     }
 })();
