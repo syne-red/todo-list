@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
     <link rel="stylesheet" href="css/style.css" />
-    </head>
+</head>
 
 <body>
     <nav id="navbar">
@@ -29,104 +29,53 @@
                     <a href="#about">ABOUT</a>
                 </li>
                 <li class="navbar-list-item">
-                    <a href="#modal-popup-login" rel="modal:open" id="modal-link">LOG IN</a>
+                    <a href="#modal-popup-login" rel="modal:open" id="btnLogIn">LOG IN</a>
                     <div id="modal-popup-login" class="modal">
                         <input type="text" name="username" id="input-username">
                         <input type="password" name="password" id="input-password">
                         <button id="modal-login-button">Log in</button>
                         <a href="#" rel="modal:close">Close</a>
                     </div>
+                    <a href="#" id="btnLogOut">LOG OUT</a>
                 </li>
             </ul>
         </div>
     </nav>
 
-    <h1>CREATE INSANE TODO-LIST</h1>
+    <div id="todo-main">
+        <h1>CREATE INSANE TODO-LIST</h1>
 
-    <div id="input-section">
-        <input type="text" id="input-list-item" placeholder="Dammsuga hela jävla hallen">
-        <button id="input-button" class="btn btn-default btn-circle btn-xl"></i>+</button>
+        <div id="input-section">
+            <input type="text" id="input-list-item" placeholder="Example: Buy eggs">
+            <button id="input-button" class="btn btn-default btn-circle btn-xl"></i>+</button>
+        </div>
+        <div id="list-box">
+            <ul>
+            </ul>
+        </div>
     </div>
-    <div id="list-box">
-        <ul>
-            <li>
-                <span class="check"><i class="far fa-square"></i></span>
-                <input class="todo-title" type="text" name="title" value="Hämta grabbarna och sen åka till Linköping">
-                <span class="delete"><i class="fas fa-trash"></i></span>
-                <span class="edit"><i class="fas fa-edit"></i></span>
-            </li>
-    
-            <li>
-                <span class="check"><i class="far fa-square"></i></span>
-                <input class="todo-title" type="text" name="title" value="Hämta grabbarna och sen åka till Linköping">
-                <span class="delete"><i class="fas fa-trash"></i></span>
-                <span class="edit"><i class="fas fa-edit"></i></span>
-            </li>
-    
-            <li>
-                <span class="check"><i class="far fa-square"></i></span>
-                <input class="todo-title" type="text" name="title" value="Hämta grabbarna och sen åka till Linköping">
-                <span class="delete"><i class="fas fa-trash"></i></span>
-                <span class="edit"><i class="fas fa-edit"></i></span>
-            </li>
-    
-            <li>
-                <span class="check"><i class="far fa-square"></i></span>
-                <input class="todo-title" type="text" name="title" value="Hämta grabbarna och sen åka till Linköping">
-                <span class="delete"><i class="fas fa-trash"></i></span>
-                <span class="edit"><i class="fas fa-edit"></i></span>
-            </li>
-    
-            <li>
-                <span class="check"><i class="far fa-square"></i></span>
-                <input class="todo-title" type="text" name="title" value="Hämta grabbarna och sen åka till Linköping">
-                <span class="delete"><i class="fas fa-trash"></i></span>
-                <span class="edit"><i class="fas fa-edit"></i></span>
-            </li>
-    
-            <li>
-                <span class="check"><i class="far fa-square"></i></span>
-                <input class="todo-title" type="text" name="title" value="Hämta grabbarna och sen åka till Linköping">
-                <span class="delete"><i class="fas fa-trash"></i></span>
-                <span class="edit"><i class="fas fa-edit"></i></span>
-            </li>
-    
-            <li>
-                <span class="check"><i class="far fa-square"></i></span>
-                <input class="todo-title" type="text" name="title" value="Hämta grabbarna och sen åka till Linköping">
-                <span class="delete"><i class="fas fa-trash"></i></span>
-                <span class="edit"><i class="fas fa-edit"></i></span>
-            </li>
-    
-            <li>
-                <span class="check"><i class="far fa-square"></i></span>
-                <input class="todo-title" type="text" name="title" value="Hämta grabbarna och sen åka till Linköping">
-                <span class="delete"><i class="fas fa-trash"></i></span>
-                <span class="edit"><i class="fas fa-edit"></i></span>
-            </li>
-    
-            <li>
-                <span class="check"><i class="far fa-square"></i></span>
-                <input class="todo-title" type="text" name="title" value="Hämta grabbarna och sen åka till Linköping">
-                <span class="delete"><i class="fas fa-trash"></i></span>
-                <span class="edit"><i class="fas fa-edit"></i></span>
-            </li>
-    
-            <li>
-                <span class="check"><i class="far fa-square"></i></span>
-                <input class="todo-title" type="text" name="title" value="Hämta grabbarna och sen åka till Linköping">
-                <span class="delete"><i class="fas fa-trash"></i></span>
-                <span class="edit"><i class="fas fa-edit"></i></span>
-            </li>
-    
-        </ul>
+    <div id="todo-front-login">
+        <img src="css/snapshot.png" alt="" />
+        <div class="login">
+            <h1>REGISTER</h1>
+
+            <h4>Email</h4>
+            <input type="text" /><br />
+            
+            <h4>Password</h4>
+            <input type="password" />
+
+            <button id="btnRegister">Create account</button>
+        </div>
     </div>
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
     <script src="js/main.js"></script>
-    <script src="js/classes.js"></script>
+    <script src="js/local-storage-manager.js"></script>
+    <script src="js/user-manager.js"></script>
+    <script src="js/todo-manager.js"></script>
     <script src="js/event-handler.js"></script>
     <script src="js/document-edit.js"></script>
 </body>
