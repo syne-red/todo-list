@@ -16,6 +16,22 @@ var EventHandler = (function () {
         $('#btnLogOut').click(function () {
             LocalStorageManager.logOut();
         })
+
+        $("#btnRegister").click(function(){
+            const registerEmail = $("#register-email").val();
+            const registerPassword = $("#register-password").val();
+
+            console.log("register email")
+
+            if(UserManager.getUserByEmail(registerEmail) !== null){
+                alert("The email already exists");
+
+                return;
+            }
+            let user = UserManager.createUser(registerEmail, registerPassword);
+            
+            LocalStorageManager.logIn(user);
+        })
     }
 
     function onAddTodoClicked() { // when enter is pressed or the + button, this event is ran
@@ -133,8 +149,10 @@ var EventHandler = (function () {
 
             todo.title = newTitle;
             LocalStorageManager.save();
-        })
+        }) 
     }
+
+    
 
     return {
         init,
