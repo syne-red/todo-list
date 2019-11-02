@@ -234,6 +234,13 @@ a {
       background: blue;
     }
 
+    /* Overline text */
+
+    .text-overline {
+      text-decoration: line-through;
+      outline: none;
+    }
+/* Registration result div */
 #register-result {
   display: none;
   margin-top: 15pt;
