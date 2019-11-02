@@ -3,7 +3,6 @@ body {
     margin: 0px; 
     background: url("background.png") no-repeat center center fixed;
     background-size: cover;
-    min-height: 100%;
   }
 
 /*NAVBAR*/
@@ -300,7 +299,7 @@ a {
 
 @media only screen and (max-width: 950px) {
 
-  h1 {
+  #todo-front-login h1 {
     font-size: 95%;
   }
 
@@ -323,8 +322,44 @@ a {
   }
 }
 
-
 @media only screen and (max-width: 650px) {
+  #todo-main {
+    /*background: rgba(0, 0, 0, 0.4);*/
+  }
+
+  #todo-main h1 {
+    font-size: 1.3em;
+    margin: 30px 0 30px 0;
+  }
+
+  .btn-circle.btn-xl {
+    width: 32px;
+    height: 32px;
+    font-size: 13px;
+    border-radius: 16px;
+  }
+
+  #input-list-item {
+    width: 280px;
+    height: 30px;
+    padding: 0 12px 0 12px;
+    border-radius: 12px;
+    font-size: 0.8em;
+  }
+
+  #list-box ul {
+    width: 400px;
+  }
+
+  #list-box ul li .todo-title {
+    width: 250px;
+    font-size: 13px;
+  }
+
+  #list-box ul li .delete {
+    font-size: 12px;
+  }
+
   #todo-front-login {
     justify-content: center;
     flex-direction: column;
@@ -343,7 +378,7 @@ a {
   }
 }
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 430px) {
   .xs-hide {
     display: none;
   }
