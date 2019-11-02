@@ -36,6 +36,7 @@ var LocalStorageManager = (function () {
         }
 
         if (storage.currentLoggedInUserEmail !== null) {
+            // if the user is already logged in, call the userLoggedIn event
             EventHandler.onUserLoggedIn(UserManager.getCurrentUser());
         }
     }
@@ -50,6 +51,7 @@ var LocalStorageManager = (function () {
     }
 
     function logOut() {
+        // when currentLoggedInUserEmail is null, the user is not logged in
         storage.currentLoggedInUserEmail = null;
         save();
 

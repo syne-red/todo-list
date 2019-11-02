@@ -1,3 +1,8 @@
+const KeyCodes = { // a map of keyboard codes
+    Enter: 13,
+    Escape: 27
+}
+
 var EventHandler = (function () {
     function init() {
 
@@ -5,15 +10,17 @@ var EventHandler = (function () {
         $(TodoListInputAddButton).click(onAddTodoClicked);
 
         $(TodoListInputTextBox).on('keydown', function (e) {
-            if (e.keyCode == 13) {
+            if (e.keyCode == KeyCodes.Enter) {
                 // enter button was pressed in the input
                 onAddTodoClicked();
-            } else if (e.keyCode == 27) { // if escape is pressed, clear the input
-                $(TodoListInputTextBox).val('');        
+            } else if (e.keyCode == KeyCodes.Escape) {
+                // if escape is pressed, clear the input
+                $(TodoListInputTextBox).val('');      
             }
         })
 
         $('#btnLogOut').click(function () {
+            // logs out user and shows the main frontpage with registration
             LocalStorageManager.logOut();
         })
     }
@@ -21,20 +28,18 @@ var EventHandler = (function () {
     function onAddTodoClicked() { // when enter is pressed or the + button, this event is ran
         // get the todo list text
         const todoListText = $(TodoListInputTextBox).val();
-        $(TodoListInputTextBox).val('');
-
+        
         // check that the todo list text is not empty
         if (todoListText.length !== 0) {
-
+            
+            // clear the user input box
+            $(TodoListInputTextBox).val('');
+            
             // create a new todo
             let todo = TodoManager.createTodo(todoListText);
 
             // get the current logged in user and add todo
             let user = UserManager.getCurrentUser();
-            if (user === null) {
-                console.log('Error: user is not logged in'); // should not happen
-                return;
-            }
 
             // add the todo to the user
             UserManager.addTodo(user, todo);
@@ -59,25 +64,6 @@ var EventHandler = (function () {
         $('#todo-front-login').show();
         $('#btnLogIn').show();
         $('#btnLogOut').hide();
-    }
-
-    // event called whenever a todo is changed in any way
-    function onTodoChanged(todo, parameter) {
-        switch (parameter) {
-            case 'title':
-                console.log(todo.title + ' title changed to ' + todo.completed);
-                break;
-            case 'completed':
-                console.log(todo.title + ' completed state changed to ' + todo.completed);
-                break;
-            case 'deleted':
-                console.log(todo.title + ' deleted state changed to ' + todo.deleted);
-                break;
-        }
-
-        // update the todo list
-        let user = UserManager.getCurrentUser();
-        DocumentEdit.updateTodoList(user.todos);
     }
 
     // when a todo is added to html, bind the completed button, change title event and delete button of it
@@ -140,7 +126,6 @@ var EventHandler = (function () {
         init,
         onUserLoggedIn,
         onUserLoggedOut,
-        onTodoChanged,
         bindTodoEvents
     }
 })();

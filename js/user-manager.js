@@ -1,12 +1,16 @@
 var UserManager = (function () {
 
+    // create a user and add it to the local storage object
+    // if the email already exist, we return the user by that email
     function createUser(email, password) {
-        
+
+        // check if email already exist and return that user instead if found
         let user = UserManager.getUserByEmail(email);
         if (user !== null) {
             return user;
         }
 
+        // create a default user object from email and password
         user = {
             email,
             password,
@@ -14,6 +18,8 @@ var UserManager = (function () {
         }
 
         let storage = LocalStorageManager.getStorage();
+
+        // add user to storage and save
         storage.users.push(user);
         LocalStorageManager.save();
 
@@ -23,6 +29,7 @@ var UserManager = (function () {
     // get the current user from the users list based on storage.currentLoggedInUserEmail 
     function getCurrentUser() {
         let storage = LocalStorageManager.getStorage();
+
         if (storage.currentLoggedInUserEmail !== null) {
             // the email was not null, so there is a logged in user
             for (let i in storage.users) {
@@ -37,7 +44,8 @@ var UserManager = (function () {
         // user was not found in users list
         return null;
     }
-    
+
+    // try to find a user by email
     function getUserByEmail(email) {
 
         let storage = LocalStorageManager.getStorage();
@@ -52,12 +60,7 @@ var UserManager = (function () {
         return null;
     }
 
-    function addUser(user) {
-        let storage = LocalStorageManager.getStorage();
-        storage.users.push(user);
-        save();
-    }
-
+    // verifies that a user by specific email exist, and that the passwords match
     function verifyPassword(email, password) {
         let user = getUserByEmail(email);
         if (user === null) { // email not found
@@ -73,46 +76,17 @@ var UserManager = (function () {
         return true;
     }
 
+    // adds a todo to a user
     function addTodo(user, todo) {
-        let storage = LocalStorageManager.getStorage();
         user.todos.push(todo);
         LocalStorageManager.save();
     }
 
-    function completeTodo(user, todo) {
-        let storage = LocalStorageManager.getStorage();
-        for (let i in user.todos) {
-            let todo = user.todos[i];
-            if (todo.id == id) {
-                todo.completed = true; // set completed to true of this todo
-                LocalStorageManager.save(); // save the changes made
-                EventHandler.onTodoChanged(todo, 'completed'); // send an event that this todo was changed
-                break;
-            }
-        }
-    }
-
-    function deleteTodo(user, todo) {
-        let storage = LocalStorageManager.getStorage();
-        for (let i in user.todos) {
-            let todo = user.todos[i];
-            if (todo.id == id) {
-                todo.deleted = true; // sets a boolean value of todo to true, it will be hidden but not physically deleted
-                LocalStorageManager.save(); // save the changes made
-                EventHandler.onTodoChanged(todo, 'deleted');
-                break;
-            }
-        }
-    }
-    
     return {
         createUser,
         getCurrentUser,
         getUserByEmail,
-        addUser,
         verifyPassword,
-        addTodo,
-        completeTodo,
-        deleteTodo
+        addTodo
     }
 })();
