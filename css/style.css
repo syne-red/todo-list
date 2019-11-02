@@ -74,6 +74,7 @@ a {
     padding: 30pt;
     display: flex;
     justify-content: space-evenly;
+    flex-wrap: wrap;
   }
 
   #todo-front-login .login {
@@ -91,7 +92,7 @@ a {
   }
 
   #todo-front-login .login input {
-    white-space: nowrap;
+      white-space: nowrap;
       width: 100%;
       overflow: hidden;
       text-overflow: ellipsis;
@@ -274,4 +275,76 @@ a {
 
 #btnLogOut {
   display: none;
+}
+
+@media only screen and (max-width: 1580px) {
+
+  /* original image size is 925x689 */
+  #todo-front-login img {
+    width: calc(925px / 1.5);
+    height: auto;
+  }
+}
+
+@media only screen and (max-width: 1300px) {
+
+  #todo-front-login img {
+    width: calc(925px / 2);
+    height: auto;
+  }
+
+  #todo-front-login .login {
+    width: 300px;
+  }
+}
+
+@media only screen and (max-width: 950px) {
+
+  h1 {
+    font-size: 95%;
+  }
+
+  #todo-front-login {
+    padding: 20px 0 0 0;
+  }
+
+  #todo-front-login img {
+    width: calc(925px / 2.5);
+    height: auto;
+  }
+
+  #todo-front-login .login {
+    width: 200px;
+  }
+
+  #btnRegister {
+    padding: 5px;
+    font-size: 0.8em;
+  }
+}
+
+
+@media only screen and (max-width: 650px) {
+  #todo-front-login {
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  #todo-front-login img {
+    display: inline-block;
+    margin: 0 auto;
+    width: 80%;
+  }
+
+  #todo-front-login .login {
+    display: inline-block;
+    margin: 30px auto;
+    width: 73%;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .xs-hide {
+    display: none;
+  }
 }
