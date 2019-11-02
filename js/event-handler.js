@@ -111,13 +111,17 @@ var EventHandler = (function () {
             LocalStorageManager.save();
 
             if (todo.completed) {
-                $('li[data-id=' + todo_id + '] > input').addClass('text-overline'); //Adds overline style
-                $('li[data-id=' + todo_id + '] > input').prop('readonly', true); //Not changeble input after checked 
+                $('li[data-id=' + todo_id + ']').css('order', '1'); // Add order style and moves the list down
+                $('li[data-id=' + todo_id + ']').css('opacity', '0.5'); // Adds opacity when marked
+                $('li[data-id=' + todo_id + '] > input').addClass('text-overline'); // Adds overline style
+                $('li[data-id=' + todo_id + '] > input').prop('readonly', true); // Not changeble input after checked 
                 $(this).removeClass('fa-square'); // remove checked css class
                 $(this).addClass('fa-check-square'); // add css class checked to the html completed button
             } else {
-                $('li[data-id=' + todo_id + '] > input').removeClass('text-overline'); //Removes overline style
-                $('li[data-id=' + todo_id + '] > input').prop('readonly', false); //Changeble input again after unchecked 
+                $('li[data-id=' + todo_id + ']').css('order', '0'); // Back to the origin prio
+                $('li[data-id=' + todo_id + ']').css('opacity', '1'); 
+                $('li[data-id=' + todo_id + '] > input').removeClass('text-overline'); // Removes overline style
+                $('li[data-id=' + todo_id + '] > input').prop('readonly', false); // Changeble input again after unchecked 
                 $(this).removeClass('fa-check-square'); // remove checked css class
                 $(this).addClass('fa-square'); // add css class checked to the html completed button
             }
