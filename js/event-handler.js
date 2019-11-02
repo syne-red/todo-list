@@ -24,21 +24,51 @@ var EventHandler = (function () {
             LocalStorageManager.logOut();
         })
 
-        $("#btnRegister").click(function(){
+        $("#btnRegister").click(function() {
+
+            const EmailRegex = /^(\w+-)*\w+@(\w+-)*\w+\.\w+$/g;
+            const PasswordRegex = /^[a-z0-9#\.,!@?=$\-]{4,16}$/gi;
+
             const registerEmail = $("#register-email").val();
             const registerPassword = $("#register-password").val();
 
-            console.log("register email")
-
-            if(UserManager.getUserByEmail(registerEmail) !== null){
-                alert("The email already exists");
-
+            // validate email and password inputs
+            if (registerEmail.length === 0) {
+                DocumentEdit.setRegisterErrorResult('An email must be entered.');
                 return;
             }
+
+            // match the email to the email regex
+            if (!registerEmail.match(EmailRegex)) {
+                DocumentEdit.setRegisterErrorResult('The email does not appear to be valid.');
+                return;
+            }
+
+            if (registerPassword.length === 0) {
+                DocumentEdit.setRegisterErrorResult('A password must be entered.');
+                return;
+            }
+
+            // match the password to the password regex
+            if (!registerPassword.match(PasswordRegex)) {
+                DocumentEdit.setRegisterErrorResult('The password is not the right length or contains invalid characters.');
+                return;
+            }
+
+            // check if email already exists
+            if (UserManager.getUserByEmail(registerEmail) !== null) {
+                DocumentEdit.setRegisterErrorResult('The email already exists: ' + registerEmail);
+                return;
+            }
+
+            // create user (adds to local storage)
             let user = UserManager.createUser(registerEmail, registerPassword);
-            
+
+            // log in the user automatically after registration
             LocalStorageManager.logIn(user);
         })
+
+        // Login handler goes here, e.g $('#btnLogin').click ...
     }
 
     function onAddTodoClicked() { // when enter is pressed or the + button, this event is ran

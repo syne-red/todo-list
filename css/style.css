@@ -240,30 +240,38 @@ a {
       text-decoration: line-through;
       outline: none;
     }
+
 /* Registration result div */
 #register-result {
   display: none;
   margin-top: 15pt;
   padding: 10pt;
-  background: rgba(255, 0, 0, 0.4);
-  box-shadow: 0 0 5px rgba(255, 0, 0, 0.4);
-  border-radius: 8px;;
+  background: rgba(30, 30, 30, 0.3);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+  border-radius: 8px;
 }
 
-#register-result > span {
+#register-result > div {
+  display: flex;
+  justify-content: center;
+}
+
+#register-result > div > span {
   font-size: 3em;
   color: rgb(253, 186, 60);
   text-shadow: 0 0 3px rgba(138, 99, 28, 0.685);
   display: inline-block;
-  width: 50px;
 }
 
-#register-result > p {
+#register-result > div > p {
   padding: 5pt;
   margin: 0;
   display: inline-block;
   vertical-align: top;
-  color: #d5d5d5;
+  color: #e7e7e7;
   font-size: 1.1em;
-  width: 80%;
+}
+
+#btnLogOut {
+  display: none;
 }

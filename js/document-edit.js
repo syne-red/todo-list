@@ -32,6 +32,18 @@ var DocumentEdit = (function () {
             //'<span class="edit"><i class="fas fa-edit"></i></span>' +
             '</li>');
 
+        // get the li that was prepended to html and store it in a variable
+        let li = $('li[data-id=' + todo.id + ']');
+
+        // if the todo is completed
+        if (todo.completed) {
+
+            // find the todo title text field and add the text-overline class and set it to readonly
+            li.find('.todo-title')
+                .addClass('text-overline')
+                .prop('readonly', true);
+        }
+
         // bind the html stuff like editing todo, completing and deleting
         EventHandler.bindTodoEvents(todo.id);
     }
@@ -61,7 +73,10 @@ var DocumentEdit = (function () {
     }
 
     function setRegisterErrorResult(message) {
-        $(SetRegisterErrorResult).fadeIn();
+        $(SetRegisterErrorResult).fadeOut(50, function () {
+            $(SetRegisterErrorResult + ' > div > p').html(message);
+            $(this).fadeIn();
+        })
     }
 
     return {

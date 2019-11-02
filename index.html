@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Team Red - Todo List</title>
-    <script src="https://kit.fontawesome.com/37d12c24c4.js" crossorigin="anonymous"></script>
-    <link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="vendor/font-awesome/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
     <link rel="stylesheet" href="css/style.css" />
 </head>
@@ -61,15 +61,17 @@
 
             <h4>Email</h4>
             <input type="email" id="register-email" /><br />
-            
+
             <h4>Password</h4>
             <input type="password" id="register-password" />
 
             <button id="btnRegister">Create account</button>
 
             <div id="register-result">
-                <span class="fas fa-exclamation-circle"></span>
-                <p>The email you entered already exists. Try another one.</p>
+                <div>
+                    <span class="fas fa-exclamation-circle"></span>
+                    <p></p>
+                </div>
             </div>
         </div>
     </div>
