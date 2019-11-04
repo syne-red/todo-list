@@ -19,6 +19,10 @@ var EventHandler = (function () {
             }
         })
 
+        $("#btnLogIn").click(function(){
+            fadeLoginModal();
+        });
+
         $('#btnLogOut').click(function () {
             // logs out user and shows the main frontpage with registration
             LocalStorageManager.logOut();
@@ -176,12 +180,19 @@ var EventHandler = (function () {
         }) 
     }
 
-    
+    function fadeLoginModal(){
+        console.log("test");
+        $("#modal-popup-login").modal({
+            fadeDuration: 800,
+            fadeDelay: 0.50
+        });
+    }
 
     return {
         init,
         onUserLoggedIn,
         onUserLoggedOut,
-        bindTodoEvents
+        bindTodoEvents,
+        fadeLoginModal
     }
 })();

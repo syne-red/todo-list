@@ -13,6 +13,12 @@
 </head>
 
 <body>
+    <div id="modal-popup-login" class="modal fade">
+        <input type="text" name="username" id="input-username">
+        <input type="password" name="password" id="input-password">
+        <button id="modal-login-button">Log in</button>
+        <a href="#" rel="modal:close" class="modal">Close</a>
+    </div>
     <nav id="navbar">
         <div class="nav-container">
             <a href="#">
@@ -29,13 +35,7 @@
                     <a href="#about">ABOUT</a>
                 </li>
                 <li class="navbar-list-item">
-                    <a href="#modal-popup-login" rel="modal:open" id="btnLogIn">LOG IN</a>
-                    <div id="modal-popup-login" class="modal">
-                        <input type="text" name="username" id="input-username">
-                        <input type="password" name="password" id="input-password">
-                        <button id="modal-login-button">Log in</button>
-                        <a href="#" rel="modal:close">Close</a>
-                    </div>
+                    <a id="btnLogIn">LOG IN</a>
                     <a href="#" id="btnLogOut">LOG OUT</a>
                 </li>
             </ul>
