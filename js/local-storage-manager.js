@@ -55,13 +55,18 @@ var LocalStorageManager = (function () {
         storage.currentLoggedInUserEmail = null;
         save();
 
+        // call the event handler for when a user logs out
+        // this hides the todo list and shows the registration form again on main page
         EventHandler.onUserLoggedOut();
     }
 
+    // sets the currently logged in email on the local storage
     function logIn(user) {
         storage.currentLoggedInUserEmail = user.email;
         save();
 
+        // call the event handler for when a user logs in
+        // this shows the todo list and hides the registration form
         EventHandler.onUserLoggedIn(user);
     }
 
