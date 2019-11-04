@@ -1,3 +1,7 @@
+const TodoMain = '#todo-main';
+const TodoAbout = '#todo-about';
+const TodoFrontRegister = '#todo-front-register';
+
 const KeyCodes = { // a map of keyboard codes
     Enter: 13,
     Escape: 27
@@ -37,6 +41,27 @@ var EventHandler = (function () {
         $("#btnLogIn").click(function(){
             fadeLoginModal();
         });
+
+        $('#btnHome').click(function () {
+            $(TodoAbout).fadeOut(50, function () {
+                if (UserManager.getCurrentUser() === null) {
+                    $(TodoFrontRegister).fadeIn(200);
+                } else {
+                    $(TodoMain).fadeIn(200);
+                }
+            });
+        })
+
+        $('#btnAbout').click(function () {
+            let elementToFadeOut = TodoMain;
+            if (UserManager.getCurrentUser() === null) {
+                elementToFadeOut = TodoFrontRegister;
+            }
+
+            $(elementToFadeOut).fadeOut(50, function () {
+                $(TodoAbout).fadeIn(200);
+            });
+        })
 
         $('#btnLogOut').click(function () {
             // logs out user and shows the main frontpage with registration
@@ -116,8 +141,8 @@ var EventHandler = (function () {
 
     // event is called when a user logs in, so we need to update the todo list and stuff
     function onUserLoggedIn(user) {
-        $('#todo-front-login').hide();
-        $('#todo-main').show();
+        $(TodoFrontRegister).hide();
+        $(TodoMain).show();
         $('#btnLogIn').hide();
         $('#btnLogOut').show();
         DocumentEdit.updateTodoList(user.todos);
@@ -125,8 +150,8 @@ var EventHandler = (function () {
 
     // event is called when user clicks on log out
     function onUserLoggedOut() {
-        $('#todo-main').hide();
-        $('#todo-front-login').show();
+        $(TodoMain).hide();
+        $(TodoFrontRegister).show();
         $('#btnLogIn').show();
         $('#btnLogOut').hide();
     }
