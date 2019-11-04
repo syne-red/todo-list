@@ -74,6 +74,7 @@ a {
     padding: 30pt;
     display: flex;
     justify-content: space-evenly;
+    flex-wrap: wrap;
   }
 
   #todo-front-login .login {
@@ -91,7 +92,7 @@ a {
   }
 
   #todo-front-login .login input {
-    white-space: nowrap;
+      white-space: nowrap;
       width: 100%;
       overflow: hidden;
       text-overflow: ellipsis;
@@ -243,5 +244,145 @@ a {
       outline: none;
     }
 
+/* Registration result div */
+#register-result {
+  display: none;
+  margin-top: 15pt;
+  padding: 10pt;
+  background: rgba(30, 30, 30, 0.3);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+  border-radius: 8px;
+}
 
+#register-result > div {
+  display: flex;
+  justify-content: center;
+}
 
+#register-result > div > span {
+  font-size: 3em;
+  color: rgb(253, 186, 60);
+  text-shadow: 0 0 3px rgba(138, 99, 28, 0.685);
+  display: inline-block;
+}
+
+#register-result > div > p {
+  padding: 5pt;
+  margin: 0;
+  display: inline-block;
+  vertical-align: top;
+  color: #e7e7e7;
+  font-size: 1.1em;
+}
+
+#btnLogOut {
+  display: none;
+}
+
+@media only screen and (max-width: 1580px) {
+
+  /* original image size is 925x689 */
+  #todo-front-login img {
+    width: calc(925px / 1.5);
+    height: auto;
+  }
+}
+
+@media only screen and (max-width: 1300px) {
+
+  #todo-front-login img {
+    width: calc(925px / 2);
+    height: auto;
+  }
+
+  #todo-front-login .login {
+    width: 300px;
+  }
+}
+
+@media only screen and (max-width: 950px) {
+
+  #todo-front-login h1 {
+    font-size: 95%;
+  }
+
+  #todo-front-login {
+    padding: 20px 0 0 0;
+  }
+
+  #todo-front-login img {
+    width: calc(925px / 2.5);
+    height: auto;
+  }
+
+  #todo-front-login .login {
+    width: 200px;
+  }
+
+  #btnRegister {
+    padding: 5px;
+    font-size: 0.8em;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  #todo-main {
+    /*background: rgba(0, 0, 0, 0.4);*/
+  }
+
+  #todo-main h1 {
+    font-size: 1.3em;
+    margin: 30px 0 30px 0;
+  }
+
+  .btn-circle.btn-xl {
+    width: 32px;
+    height: 32px;
+    font-size: 13px;
+    border-radius: 16px;
+  }
+
+  #input-list-item {
+    width: 280px;
+    height: 30px;
+    padding: 0 12px 0 12px;
+    border-radius: 12px;
+    font-size: 0.8em;
+  }
+
+  #list-box ul {
+    width: 400px;
+  }
+
+  #list-box ul li .todo-title {
+    width: 250px;
+    font-size: 13px;
+  }
+
+  #list-box ul li .delete {
+    font-size: 12px;
+  }
+
+  #todo-front-login {
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  #todo-front-login img {
+    display: inline-block;
+    margin: 0 auto;
+    width: 80%;
+  }
+
+  #todo-front-login .login {
+    display: inline-block;
+    margin: 30px auto;
+    width: 73%;
+  }
+}
+
+@media only screen and (max-width: 430px) {
+  .xs-hide {
+    display: none;
+  }
+}

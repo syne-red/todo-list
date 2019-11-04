@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Team Red - Todo List</title>
-    <script src="https://kit.fontawesome.com/37d12c24c4.js" crossorigin="anonymous"></script>
-    <link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="vendor/font-awesome/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
     <link rel="stylesheet" href="css/style.css" />
 </head>
@@ -19,13 +19,13 @@
                 <h3 id="logo"></h3>
             </a>
             <ul class="navbar-list">
-                <li class="navbar-list-item">
+                <li class="navbar-list-item xs-hide">
                     <a href="#home">HOME</a>
                 </li>
-                <li class="navbar-list-item">
+                <li class="navbar-list-item xs-hide">
                     <a href="#todo">TODO</a>
                 </li>
-                <li class="navbar-list-item">
+                <li class="navbar-list-item xs-hide">
                     <a href="#about">ABOUT</a>
                 </li>
                 <li class="navbar-list-item">
@@ -61,11 +61,18 @@
 
             <h4>Email</h4>
             <input type="email" id="register-email" /><br />
-            
+
             <h4>Password</h4>
             <input type="password" id="register-password" />
 
             <button id="btnRegister">Create account</button>
+
+            <div id="register-result">
+                <div>
+                    <span class="fas fa-exclamation-circle"></span>
+                    <p></p>
+                </div>
+            </div>
         </div>
     </div>
 
