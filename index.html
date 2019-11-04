@@ -14,10 +14,14 @@
 
 <body>
     <div id="modal-popup-login" class="modal fade">
+        <h1 id="login-headline">Login</h1>
+        <p>Email</p>
         <input type="text" name="username" id="input-username" placeholder="Enter your email">
+        <p>Password</p>
         <input type="password" name="password" id="input-password" placeholder="Enter your password">
         <button id="modal-login-button">Log in</button>
         <a href="#" rel="modal:close" class="modal" id="close-login-modal">Close</a>
+        <a href="#" id="forgot-password">Forgot password?</a>
     </div>
     <nav id="navbar">
         <div class="nav-container">
@@ -43,7 +47,7 @@
     </nav>
 
     <div id="todo-main">
-        <h1>CREATE INSANE TODO-LIST</h1>
+        <h1 class="todo-headline" >CREATE INSANE TODO-LIST</h1>
 
         <div id="input-section">
             <input type="text" id="input-list-item" placeholder="Example: Buy eggs">
@@ -57,7 +61,7 @@
     <div id="todo-front-login">
         <img src="css/snapshot.png" alt="" />
         <div class="login">
-            <h1>REGISTER</h1>
+            <h1 class="todo-headline">REGISTER</h1>
 
             <h4>Email</h4>
             <input type="email" id="register-email" /><br />

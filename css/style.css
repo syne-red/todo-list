@@ -129,7 +129,7 @@ a {
     cursor: pointer;
   }
 
-  h1 {
+  .todo-headline {
     font-family: 'Montserrat', monospace, serif;
     font-size: 2.5em;
     font-weight: 500;
@@ -386,3 +386,85 @@ a {
     display: none;
   }
 }
+
+/*Login modal*/
+
+#modal-popup-login {
+  width: 400px;
+  height: 400px;
+  /*background: rgba(30, 30, 30, 0.15);*/
+  /*background-image: url('background.png');*/
+  background-position: center;
+  background-repeat: no-repeat, repeat;
+  background-size: cover;
+  padding: 20px 30px;
+  background: rgba(0,0,0,0.8);
+}
+
+#login-headline {
+  font-family: 'Montserrat', monospace, serif;
+  font-size: 2.5em;
+  font-weight: 500;
+  text-align: center;
+  color: white;
+  text-shadow: 2px 1px 5px rgba(0,0,0,0.6);
+  margin: 0px;
+  padding: 0 0 20px;
+}
+
+#modal-popup-login p {
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', monospace, serif;
+  font-weight: bold;
+  color: #fff;
+}
+
+#modal-popup-login input {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+#modal-popup-login input[type="text"], [type="password"]{
+  border: none;
+  border-bottom: 1px solid #fff;
+  background: transparent;
+  outline: none;
+  height: 40px;
+  color: #fff;
+  font-size: 16px;
+}
+
+#modal-login-button {
+  border: none;
+  outline: none;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.8);
+  color: #333333;
+  font-size: 18px;
+  border-radius: 20px;
+  width: 100%;
+}
+
+#modal-login-button:hover {
+  cursor: pointer;
+  background: orangered;
+  color: #fff;
+}
+
+#forgot-password {
+  padding-top: 10px;
+  font-family: 'Montserrat';
+  font-style: italic;
+  text-decoration: none;
+  font-size: 20px;
+  line-height: 50px;
+  color: darkgrey;
+}
+#forgot-password:hover {
+  color: orangered;
+}
+
+
+
+
