@@ -13,6 +13,16 @@
 </head>
 
 <body>
+    <div id="modal-popup-login" class="modal fade">
+        <h1 id="login-headline">Login</h1>
+        <p>Email</p>
+        <input type="text" name="username" id="input-username" placeholder="Enter your email">
+        <p>Password</p>
+        <input type="password" name="password" id="input-password" placeholder="Enter your password">
+        <button id="modal-login-button">Log in</button>
+        <a href="#" rel="modal:close" class="modal" id="close-login-modal">Close</a>
+        <a href="#" id="forgot-password">Forgot password?</a>
+    </div>
     <nav id="navbar">
         <div class="nav-container">
             <a href="#">
@@ -26,13 +36,7 @@
                     <a href="#" id="btnAbout">ABOUT</a>
                 </li>
                 <li class="navbar-list-item">
-                    <a href="#modal-popup-login" rel="modal:open" id="btnLogIn">LOG IN</a>
-                    <div id="modal-popup-login" class="modal">
-                        <input type="text" name="username" id="input-username">
-                        <input type="password" name="password" id="input-password">
-                        <button id="modal-login-button">Log in</button>
-                        <a href="#" rel="modal:close">Close</a>
-                    </div>
+                    <a href ="#" id="btnLogIn">LOG IN</a>
                     <a href="#" id="btnLogOut">LOG OUT</a>
                 </li>
             </ul>
@@ -40,7 +44,7 @@
     </nav>
 
     <div id="todo-main">
-        <h1>CREATE INSANE TODO-LIST</h1>
+        <h1 class="todo-headline" >CREATE INSANE TODO-LIST</h1>
 
         <div id="input-section">
             <input type="text" id="input-list-item" placeholder="Example: Buy eggs">
@@ -61,15 +65,15 @@
             <p>Made by Swedish home grown experts in the group Team Red &trade; (Elias, Calle, Viktor, Niklas, Marcus
                 och Albin).</p>
             <div class="center">
-                <p>💚 <span class="sp-green">Green Environment</span> approved by Greta Thunberg ✔️</p>
+                <p>?? <span class="sp-green">Green Environment</span> approved by Greta Thunberg ??</p>
             </div>
         </content>
     </div>
 
     <div id="todo-front-register">
-        <img src="css/snapshot.png" alt="" />
+        <img src="css/BG-FOR-FREE.jpg" alt="" />
         <div class="register">
-            <h1>REGISTER</h1>
+            <h1 class="todo-headline">REGISTER</h1>
 
             <h4>Email</h4>
             <input type="email" id="register-email" /><br />
