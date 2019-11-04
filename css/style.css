@@ -3,6 +3,7 @@ body {
     margin: 0px; 
     background: url("background.png") no-repeat center center fixed;
     background-size: cover;
+    min-height: 100%;
   }
 
 /*NAVBAR*/
@@ -186,6 +187,8 @@ a {
       width: 572px;
       margin: auto;
       list-style-type: none;
+      display: flex;
+      flex-direction: column;
     }
 
     #list-box ul li {
