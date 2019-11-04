@@ -142,6 +142,7 @@ var EventHandler = (function () {
     // event is called when a user logs in, so we need to update the todo list and stuff
     function onUserLoggedIn(user) {
         $(TodoFrontRegister).hide();
+        $(TodoAbout).hide();
         $(TodoMain).show();
         $('#btnLogIn').hide();
         $('#btnLogOut').show();
@@ -151,6 +152,7 @@ var EventHandler = (function () {
     // event is called when user clicks on log out
     function onUserLoggedOut() {
         $(TodoMain).hide();
+        $(TodoAbout).hide();
         $(TodoFrontRegister).show();
         $('#btnLogIn').show();
         $('#btnLogOut').hide();
