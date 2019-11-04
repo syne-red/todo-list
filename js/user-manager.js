@@ -76,6 +76,17 @@ var UserManager = (function () {
         return true;
     }
 
+    function logInUser(email, password){
+        let userLogIn = verifyPassword(email, password);
+        if(userLogIn === true){
+            let user = getUserByEmail(email);
+            return user;
+        }
+        else {
+            return null;
+        }
+    }
+
     // adds a todo to a user
     function addTodo(user, todo) {
         user.todos.push(todo);
@@ -87,6 +98,7 @@ var UserManager = (function () {
         getCurrentUser,
         getUserByEmail,
         verifyPassword,
-        addTodo
+        addTodo,
+        logInUser
     }
 })();

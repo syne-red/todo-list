@@ -18,6 +18,21 @@ var EventHandler = (function () {
                 $(TodoListInputTextBox).val('');      
             }
         })
+        
+        $("#modal-login-button").click(function(){
+            let loginUsername = $("#input-username").val();
+            let loginPassword = $("#input-password").val();
+            let user = UserManager.logInUser(loginUsername,loginPassword);
+            if(user != null){
+                LocalStorageManager.logIn(user);
+                //$('#modal-popup-login').modal('hide');
+                $('#close-login-modal').click();
+            }
+            else {
+                
+            }
+        });
+
 
         $("#btnLogIn").click(function(){
             fadeLoginModal();
@@ -181,7 +196,7 @@ var EventHandler = (function () {
     }
 
     function fadeLoginModal(){
-        console.log("test");
+        //console.log("test");
         $("#modal-popup-login").modal({
             fadeDuration: 800,
             fadeDelay: 0.50
