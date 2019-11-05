@@ -19,6 +19,11 @@ body {
     color: orangered;
   }  
 
+  h4 {
+    font-family: montserrat;
+    font-size: 0.8em;
+  }
+
 /*NAVBAR*/
 .nav-container {
   width: 100vw;
@@ -97,6 +102,11 @@ body {
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
+    margin-top: 7vh;
+  }
+
+  #register-email {
+    padding: 10px 0px;
   }
 
   #todo-front-register .register {
@@ -111,6 +121,7 @@ body {
 
   #todo-front-register .register h1 {
     margin: 0;
+    font-size: 2em;
   }
 
   #todo-front-register .register input {
@@ -136,12 +147,11 @@ body {
     display: block;
     background: rgba(255, 255, 255, 0.8);
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
-    border-radius: 8px;
+    border-radius: 25px;
     color: #333333;
-    border: 0;
-    padding: 10px;
-    font-size: 1.2em;
-    margin-top: 15px;
+    padding: 14px;
+    font-size: 1em;
+    margin-top: 1.6em;
     width: 100%;
   }
 
