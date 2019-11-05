@@ -33,7 +33,7 @@ var EventHandler = (function () {
                 $('#close-login-modal').click();
             }
             else {
-                
+                DocumentEdit.setLoginErrorResult('Invald email or password');
             }
         });
 
