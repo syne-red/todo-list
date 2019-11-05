@@ -3,6 +3,7 @@ const TodoListInputAddButton = '#input-button';
 const TodoList = '#list-box ul';
 
 const SetRegisterErrorResult = '#register-result';
+const SetLoginErrorResult = '#login-result';
 
 var DocumentEdit = (function () {
     function init() {
@@ -84,12 +85,20 @@ var DocumentEdit = (function () {
         })
     }
 
+    function setLoginErrorResult(message) {
+        $(SetLoginErrorResult).fadeOut(50, function () {
+            $(SetLoginErrorResult + ' > div > p').html(message);
+            $(this).fadeIn();
+        })
+    }
+
     return {
         init,
         addTodo,
         updateTodoList,
         removeTodo,
         fadeModal,
-        setRegisterErrorResult
+        setRegisterErrorResult,
+        setLoginErrorResult
     }
 })();

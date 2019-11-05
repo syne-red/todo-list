@@ -279,7 +279,8 @@ body {
     }
 
 /* Registration result div */
-#register-result {
+#register-result,
+#login-result {
   display: none;
   margin-top: 15pt;
   padding: 10pt;
@@ -288,19 +289,22 @@ body {
   border-radius: 8px;
 }
 
-#register-result > div {
+#register-result > div,
+#login-result > div {
   display: flex;
   justify-content: center;
 }
 
-#register-result > div > span {
+#register-result > div > span,
+#login-result > div > span {
   font-size: 3em;
   color: rgb(253, 186, 60);
   text-shadow: 0 0 3px rgba(138, 99, 28, 0.685);
   display: inline-block;
 }
 
-#register-result > div > p {
+#register-result > div > p,
+#login-result > div > p {
   padding: 5pt;
   margin: 0;
   display: inline-block;
@@ -456,7 +460,6 @@ body {
 
 #modal-popup-login {
   width: 400px;
-  height: 400px;
   /*background: rgba(30, 30, 30, 0.15);*/
   /*background-image: url('background.png');*/
   background-position: center;
