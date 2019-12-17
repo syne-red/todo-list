@@ -78,7 +78,7 @@ var UserManager = (function () {
 
     function logInUser(email, password){
         let userLogIn = verifyPassword(email, password);
-        if(userLogIn === true){
+        if (userLogIn === true){
             let user = getUserByEmail(email);
             return user;
         }

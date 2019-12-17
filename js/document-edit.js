@@ -35,7 +35,6 @@ var DocumentEdit = (function () {
             '<span class="check"><i class="far ' + checkBoxClass + '"></i></span>' +
             '<input class="todo-title ' + overlineClass + '" type="text" name="title" value="' + todo.title + '">' +
             '<span class="delete"><i class="fas fa-trash"></i></span>' +
-            //'<span class="edit"><i class="fas fa-edit"></i></span>' +
             '</li>');
 
         // get the li that was prepended to html and store it in a variable

@@ -26,13 +26,17 @@ var EventHandler = (function () {
         $("#modal-login-button").click(function(){
             let loginUsername = $("#input-username").val();
             let loginPassword = $("#input-password").val();
+
+            // verify email and password and get user object
             let user = UserManager.logInUser(loginUsername,loginPassword);
-            if(user != null){
+            if (user != null) {
+                // log in the user
                 LocalStorageManager.logIn(user);
-                //$('#modal-popup-login').modal('hide');
+                
+                // simulate clicking the Close button of Login dialog
                 $('#close-login-modal').click();
-            }
-            else {
+            } else {
+                // show an error message on failed login
                 DocumentEdit.setLoginErrorResult('Invald email or password');
             }
         });
@@ -111,8 +115,6 @@ var EventHandler = (function () {
             // log in the user automatically after registration
             LocalStorageManager.logIn(user);
         })
-
-        // Login handler goes here, e.g $('#btnLogin').click ...
     }
 
     function onAddTodoClicked() { // when enter is pressed or the + button, this event is ran
